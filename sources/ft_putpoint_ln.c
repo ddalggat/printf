@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 08:37:30 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/06/19 09:09:18 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/06/24 21:17:19 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ void	ft_putpoint_ln(unsigned long n, t_box *box)
 
 	i = 0;
 	num = n;
-	ft_putchar_ln('0', box);
-	ft_putchar_ln('x', box);
+	if (box->flag != '0')
+	{
+		ft_putchar_ln('0', box);
+		ft_putchar_ln('x', box);
+	}
 	if (!n && (box->dot != 0 || box->precision < 0))
 		ft_putchar_ln('0', box);
 	while (num > 0)

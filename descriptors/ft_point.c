@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 09:40:54 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/06/23 22:00:14 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/06/24 20:53:55 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	ft_right_edge_point(unsigned long num, t_box *box)
 {
 	while (box->width-- > 0)
 		ft_putchar_ln(' ', box);
+	if (box->flag == '0')
+	{
+		ft_putchar_ln('0', box);
+		ft_putchar_ln('x', box);
+	}
 	while (box->precision-- > 0)
 		ft_putchar_ln('0', box);
 	ft_putpoint_ln(num, box);
@@ -39,9 +44,9 @@ void	ft_costyli_point(unsigned long num, t_box *box)
 	if (box->precision < 0)
 		box->precision = 0;
 	box->width = box->width - box->precision - len;
-	if (num < 0 || (box->dot == -1 && num == 0))
+	if (box->dot < 0 && num == 0)
 		box->width--;
-	if (box->flag == '0' && box->dot == -1)
+	if (box->flag == '0' && box->dot == 0)
 	{
 		box->precision = box->width;
 		box->width = 0;

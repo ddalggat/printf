@@ -6,7 +6,7 @@
 /*   By: gjailbir <gjailbir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 21:39:28 by gjailbir          #+#    #+#             */
-/*   Updated: 2021/06/23 22:03:14 by gjailbir         ###   ########.fr       */
+/*   Updated: 2021/06/24 20:00:18 by gjailbir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_parse(const char *str, va_list args)
 	int		len;
 
 	box = malloc(sizeof(t_box));
+	if (!box)
+		return (0);
 	box->len = 0;
 	while (*str)
 	{
